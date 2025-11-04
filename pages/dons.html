@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dons - Sol'Arkiens</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .donation-card {
+            border: 3px solid;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .donation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .donation-card:hover::before {
+            left: 100%;
+        }
+
+        .donation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.4);
+        }
+
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .role-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .tier-1 {
+            border-color: #87CEEB;
+            background: linear-gradient(135deg, rgba(135, 206, 235, 0.1) 0%, rgba(0, 217, 255, 0.1) 100%);
+        }
+
+        .tier-1 .role-badge {
+            background: #87CEEB;
+            color: white;
+        }
+
+        .tier-2 {
+            border-color: #32CD32;
+            background: linear-gradient(135deg, rgba(50, 205, 50, 0.1) 0%, rgba(50, 205, 50, 0.05) 100%);
+        }
+
+        .tier-2 .role-badge {
+            background: #32CD32;
+            color: white;
+        }
+
+        .tier-3 {
+            border-color: #FF6347;
+            background: linear-gradient(135deg, rgba(255, 99, 71, 0.1) 0%, rgba(255, 99, 71, 0.05) 100%);
+        }
+
+        .tier-3 .role-badge {
+            background: #FF6347;
+            color: white;
+        }
+
+        .tier-4 {
+            border-color: #FFD700;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 100%);
+        }
+
+        .tier-4 .role-badge {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+        }
+
+        .tier-5 {
+            border-color: #FF1493;
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.15) 0%, rgba(0, 217, 255, 0.1) 100%);
+        }
+
+        .tier-5 .role-badge {
+            background: linear-gradient(135deg, #FF1493, #00D9FF);
+            color: white;
+        }
+
+        .reward-item {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .reward-item:last-child {
+            border-bottom: none;
+        }
+
+        .reward-item::before {
+            content: '✨';
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .hero-text {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .divider-colored {
+            height: 4px;
+            background: linear-gradient(90deg, #FF1493, #00D9FF, #FFD700);
+            margin: 40px 0;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">🦖 Sol'Arkiens</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="infos.html">Infos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="serveurs.html">Serveurs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reglement.html">Règlement</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="dons.html">Dons</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="hero bg-gradient text-center py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold hero-text mb-3">❤️ Soutiens notre aventure ❤️</h1>
+            <p class="lead hero-text mb-2">Fais partie de l'histoire !</p>
+            <p class="hero-text">Notre serveur vit grâce à toi, à ta présence, à ton énergie, à ton soutien</p>
+        </div>
+    </section>
+
+    <!-- Contenu -->
+    <main class="container my-5">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="alert alert-info border-2" role="alert">
+                    <h5 class="mb-3">🎯 À quoi servent vos dons ?</h5>
+                    <p class="mb-0">Chaque don nous aide à :</p>
+                    <ul class="mt-2 mb-0">
+                        <li>🔌 Garder le serveur en ligne et stable</li>
+                        <li>🏞️ Ajouter de nouvelles maps au cluster</li>
+                        <li>⚙️ Améliorer les performances</li>
+                        <li>🎮 Ajouter des contenus et améliorations</li>
+                    </ul>
+                </div>
+
+                <div class="alert alert-warning border-2 mt-4" role="alert">
+                    <h5 class="mb-2">⚠️ Important</h5>
+                    <p class="mb-0"><strong>Ce n'est pas une obligation !</strong> Les dons sont entièrement volontaires. Les sondages pour les nouvelles maps seront lancés et seuls <strong>VOUS</strong>, les joueurs, pourrez voter. Les admins ne voteront pas.</p>
+                </div>
+
+                <div class="text-center mt-4 mb-4">
+                    <a href="https://server.nitrado.net/donations/donate/12116071" class="btn btn-primary btn-lg" target="_blank">
+                        💳 Faire un don
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider-colored"></div>
+
+        <h2 class="text-center mb-5 fw-bold">💎 Paliers de Récompenses</h2>
+        <p class="text-center text-muted mb-4">
+            <strong>Note :</strong> La somme des dons n'est pas cumulable. Seul le rôle est cumulable. Vous recevrez la récompense de la somme versée et votre rôle montera 😊
+        </p>
+
+        <div class="row g-4 mb-5">
+            <!-- Tier 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card donation-card tier-1 h-100">
+                    <div class="card-body text-center">
+                        <div class="role-badge">💙 SOUTIEN</div>
+                        <div class="price-tag">5€</div>
+                        
+                        <div class="reward-item">1 Panda roux</div>
+                        <div class="reward-item">1 Chibi au choix</div>
+                        <div class="reward-item">400 Polymère plaque</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tier 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card donation-card tier-2 h-100">
+                    <div class="card-body text-center">
+                        <div class="role-badge">🤝 AMI FIDÈLE</div>
+                        <div class="price-tag">10€</div>
+                        
+                        <div class="reward-item">1 Dino de Farm (Colo au choix)</div>
+                        <div class="reward-item">2 Chibis</div>
+                        <div class="reward-item">1000 Polymère plaque</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card donation-card tier-3 h-100">
+                    <div class="card-body text-center">
+                        <div class="role-badge">🔥 PARTENAIRE ENGAGÉ</div>
+                        <div class="price-tag">20€</div>
+                        
+                        <div class="reward-item">30 Arkuna gold coin</div>
+                        <div class="reward-item">5000 Polymère plaque</div>
+                        <div class="reward-item">1 Dino d'épaule SHINY</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tier 4 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card donation-card tier-4 h-100">
+                    <div class="card-body text-center">
+                        <div class="role-badge">🌟 VIP DU SERVEUR</div>
+                        <div class="price-tag">30€</div>
+                        
+                        <div class="reward-item">50 Arkuna gold coin</div>
+                        <div class="reward-item">7500 Polymère plaque</div>
+                        <div class="reward-item">10 Pièces Discord</div>
+                        <div class="reward-item">1 Petit Carnivore SHINY</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tier 5 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card donation-card tier-5 h-100">
+                    <div class="card-body text-center">
+                        <div class="role-badge">👑 LÉGENDE</div>
+                        <div class="price-tag">50€</div>
+                        
+                        <div class="reward-item">100 Arkuna gold coin</div>
+                        <div class="reward-item">20 Pièces Discord</div>
+                        <div class="reward-item">1 Rex TEK (Colo + 2 Stats au choix)</div>
+                        <div class="reward-item">1 Runic Wyvern au choix</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider-colored"></div>
+
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h3 class="mb-4">💖 Chaque don compte</h3>
+                <p class="lead mb-4">Chaque don, petit ou grand, nous aide à créer un serveur encore plus incroyable. Merci du fond du cœur 🙏</p>
+                
+                <a href="https://server.nitrado.net/donations/donate/12116071" class="btn btn-primary btn-lg" target="_blank">
+                    💳 Faire un don maintenant
+                </a>
+
+                <p class="text-muted mt-4">
+                    ❤️ Bon jeux à tous ! ❤️
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Sol'Arkiens. Tous droits réservés.</p>
+            <p class="small mt-2">Merci de votre soutien 💖</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
