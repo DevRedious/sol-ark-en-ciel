@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Sol'Arkiens</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .faq-question {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .faq-question:hover {
+            opacity: 0.9;
+        }
+        .faq-answer {
+            padding: 20px;
+            background: white;
+            display: none;
+        }
+        .faq-answer.active {
+            display: block;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-icon.rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">🦖 Sol'Arkiens</a>
+            <!-- ID de la navbar collapsible -->
+            <!-- État initial : fermé -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="infos.html">Infos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="serveurs.html">Serveurs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reglement.html">Règlement</a></li>
+                    <li class="nav-item"><a class="nav-link" href="boutiques.html">Boutiques</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dons.html">Dons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="hero bg-gradient text-white text-center py-4">
+        <div class="container">
+            <h1 class="display-5 fw-bold">❓ Foire Aux Questions</h1>
+            <p class="lead">Trouvez rapidement les réponses à vos questions</p>
+        </div>
+    </section>
+
+    <!-- Contenu -->
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                
+                <!-- Question 1 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(1)">
+                        <strong>🎮 Comment rejoindre le serveur ?</strong>
+                        <span class="faq-icon" id="icon-1">▼</span>
+                    </div>
+                    <div class="faq-answer" id="answer-1">
+                        <p>Pour rejoindre nos serveurs :</p>
+                        <ol>
+                            <li>Lancez Ark: Survival Evolved</li>
+                            <li>Allez dans "Rejoindre Ark"</li>
+                            <li>Cliquez sur "Rechercher par IP"</li>
+                            <li>Entrez l'IP du serveur (disponible sur la page <a href="serveurs.html">Serveurs</a>)</li>
+                            <li>Entrez le mot de passe si demandé</li>
+                        </ol>
+                        <p class="mb-0">Si vous avez des difficultés, contactez un administrateur sur Discord.</p>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(2)">
+                        <strong>🎁 Comment obtenir mon starter pack ?</strong>
+                        <span class="faq-icon" id="icon-2">▼</span>
+                    </div>
+                    <div class="faq-answer" id="answer-2">
+                        <p>Pour recevoir votre starter pack :</p>
+                        <ol>
+                            <li>Rejoignez notre Discord</li>
+                            <li>Ouvrez un ticket dans le salon prévu</li>
+                            <li>Rejoignez le vocal "MICRO RAPTOR D'ACCUEIL"</li>
+                            <li>Un admin vous donnera votre pack de démarrage</li>
+                        </ol>
+                        <p class="mb-0">Le contenu du starter est disponible dans le salon Discord "contenu-starter".</p>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(3)">
+                        <strong>💰 Comment gagner des pièces d'argent ?</strong>
+                        <span class="faq-icon" id="icon-3">▼</span>
+                    </div>
+                    <div class="faq-answer" id="answer-3">
+                        <p>Plusieurs moyens d'obtenir des pièces d'argent :</p>
+                        <ul>
+                            <li>🎯 Quêtes quotidiennes</li>
+                            <li>📦 Pack de semaine</li>
+                            <li>🎉 Événements spéciaux</li>
+                            <li>🎰 Casino (avec les bons résultats)</li>
+                            <li>🔄 Échange de polymère plaquette à la banque (200 → 1 pièce)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(4)">
+                        <strong>🏠 Combien de bases puis-je construire ?</strong>
+                        <span class="faq-icon" id="icon-4">▼</span>
+                    </div>
+                    <div class="faq-answer" id="answer-4">
+                        <p>Selon le règlement :</p>
+                        <ul>
+                            <li><strong>1 BASE PRINCIPALE</strong> sur la map de votre choix (taille libre mais raisonnable)</li>
+                            <li><strong>AVANT-POSTES 8x8</strong> uniquement sur les autres maps</li>
+                        </ul>
+                        <p class="mb-0">⚠️ Interdiction de construire près des grottes, notes, spawns de ressources ou dinos rares.</p>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(5)">
+                        <strong>👥 Combien de membres par tribu ?</strong>
+                        <span class="faq-icon" id="icon-5">▼</span>
+                    </div>
+                    <div class="faq-answer" id="answer-5">
+                        <p>Les tribus peuvent compter <strong>jusqu'à 4 personnes maximum</strong>.</p>
+                        <p class="mb-0">N'oubliez pas de créer votre fiche-tribu sur Discord et de demander votre code à 4 chiffres pour accéder au coffre tribu !</p>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(6)">
+                        <strong>🦕 Que faire si j'oublie mes pièges dehors ?</strong>
+                        <span class="faq-icon" id="icon-6">▼</span>
+                    </div>
+                    <div class="faq-answer" id="answer-6">
+                        <p>Il est <strong>OBLIGATOIRE</strong> de retirer vos pièges après utilisation.</p>
+                        <p>Si vous oubliez :</p>
+                        <ul>
+                            <li>Prévenez immédiatement un admin sur Discord</li>
+                            <li>Retirez les pièges dès que possible</li>
+                        </ul>
+                        <p class="mb-0"><strong>⚠️ Attention :</strong> 3 avertissements = BAN temporaire ou définitif</p>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(7)">
+                        <strong>🎪 Quand ont lieu les enchères ?</strong>
+                        <span class="faq-icon" id="icon-7">▼</span>
+                    </div>
+                    <div class="faq-answer" id="answer-7">
+                        <p>Les enchères se déroulent :</p>
+                        <ul>
+                            <li>📅 Tous les <strong>15 jours</strong></li>
+                            <li>🕐 Le samedi soir à partir de <strong>21h00</strong></li>
+                            <li>💰 Monnaie : <strong>Pièces d'argent</strong></li>
+                        </ul>
+                        <p class="mb-0">Vous pouvez y trouver des Shiny Dinos, objets rares, Chibis et plus encore !</p>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(8)">
+                        <strong>⏰ Quels sont les horaires de maintenance ?</strong>
+                        <span class="faq-icon" id="icon-8">▼</span>
+                    </div>
+                    <div class="faq-answer" id="answer-8">
+                        <ul>
+                            <li>🔧 <strong>Maintenance hebdomadaire :</strong> Jeudi de 02:00 à 06:00</li>
+                            <li>🔄 <strong>Redémarrage quotidien :</strong> 06:00 du matin</li>
+                            <li>💾 <strong>Sauvegarde automatique :</strong> Toutes les heures</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(9)">
+                        <strong>💳 Comment faire un don ?</strong>
+                        <span class="faq-icon" id="icon-9">▼</span>
+                    </div>
+                    <div class="faq-answer" id="answer-9">
+                        <p>Pour soutenir le serveur :</p>
+                        <ol>
+                            <li>Rendez-vous sur la page <a href="dons.html">Dons</a></li>
+                            <li>Choisissez votre palier</li>
+                            <li>Cliquez sur "Faire un don"</li>
+                            <li>Suivez les instructions de paiement</li>
+                        </ol>
+                        <p class="mb-0"><strong>💎 Important :</strong> Les dons sont volontaires et vous donnent accès à des récompenses exclusives !</p>
+                    </div>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(10)">
+                        <strong>❌ Que faire si je me fais bannir ?</strong>
+                        <span class="faq-icon" id="icon-10">▼</span>
+                    </div>
+                    <div class="faq-answer" id="answer-10">
+                        <p>Si vous recevez un ban :</p>
+                        <ul>
+                            <li>Prenez le temps de comprendre la raison (vérifiez le règlement)</li>
+                            <li>Si c'est un ban temporaire, attendez la fin de la période</li>
+                            <li>Pour contester : ouvrez un ticket sur Discord et expliquez calmement votre situation</li>
+                        </ul>
+                        <p class="mb-0"><strong>⚠️ Rappel :</strong> Le vol entraîne un BAN IMMÉDIAT et DÉFINITIF sans possibilité de contestation.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="alert alert-info mt-5">
+            <h5>💬 Vous ne trouvez pas votre réponse ?</h5>
+            <p class="mb-0">N'hésitez pas à nous contacter sur <strong>Discord</strong> ou via notre page <a href="contact.html">Contact</a>. Notre équipe est là pour vous aider !</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Sol'Arkiens. Tous droits réservés.</p>
+            <p class="small mt-2">Ark: Survival Evolved © Studio Wildcard</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/interaction.js"></script>
+    <script>
+        function toggleFaq(id) {
+            const answer = document.getElementById('answer-' + id);
+            const icon = document.getElementById('icon-' + id);
+            
+            // Toggle l'affichage
+            answer.classList.toggle('active');
+            icon.classList.toggle('rotate');
+        }
+    </script>
+</body>
+</html>

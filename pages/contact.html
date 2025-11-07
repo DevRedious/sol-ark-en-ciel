@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Sol'Arkiens</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .contact-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .contact-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+        }
+        .social-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">🦖 Sol'Arkiens</a>
+            <!-- ID de la navbar collapsible -->
+            <!-- État initial : fermé -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="infos.html">Infos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="serveurs.html">Serveurs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reglement.html">Règlement</a></li>
+                    <li class="nav-item"><a class="nav-link" href="boutiques.html">Boutiques</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dons.html">Dons</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="hero bg-gradient text-white text-center py-4">
+        <div class="container">
+            <h1 class="display-5 fw-bold">📞 Nous Contacter</h1>
+            <p class="lead">Notre équipe est à votre écoute</p>
+        </div>
+    </section>
+
+    <!-- Contenu -->
+    <main class="container my-5">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <p class="lead mb-4">
+                    Vous avez une question, un problème technique ou simplement envie de discuter ? 
+                    N'hésitez pas à nous contacter par les moyens ci-dessous !
+                </p>
+            </div>
+        </div>
+
+        <!-- Méthodes de contact -->
+        <div class="row g-4 mb-5">
+            <!-- Discord -->
+            <div class="col-md-6">
+                <div class="card contact-card h-100 text-center shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="social-icon">💬</div>
+                        <h3 class="card-title mb-3">Discord</h3>
+                        <p class="card-text mb-4">
+                            Rejoignez notre communauté Discord ! C'est le moyen le plus rapide pour obtenir de l'aide, 
+                            discuter avec d'autres joueurs et suivre toutes les actualités du serveur.
+                        </p>
+                        <a href="https://discord.gg/6b4NYRNsRC" class="btn btn-primary btn-lg" target="_blank">
+                            🎮 Rejoindre Discord
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ticket -->
+            <div class="col-md-6">
+                <div class="card contact-card h-100 text-center shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="social-icon">🎫</div>
+                        <h3 class="card-title mb-3">Ticket Support</h3>
+                        <p class="card-text mb-4">
+                            Pour un support personnalisé, ouvrez un ticket sur notre Discord. 
+                            Un administrateur vous répondra dans les plus brefs délais.
+                        </p>
+                        <a href="https://discord.gg/6b4NYRNsRC" class="btn btn-outline-primary btn-lg" target="_blank">
+                            📝 Ouvrir un Ticket
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Informations supplémentaires -->
+        <h2 class="text-center mb-4">📋 Informations Utiles</h2>
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">⏰ Horaires</h5>
+                        <p class="card-text">
+                            Notre équipe est disponible principalement en soirée et le week-end. 
+                            Les tickets sont traités quotidiennement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">🚀 Temps de réponse</h5>
+                        <p class="card-text">
+                            Nous nous efforçons de répondre dans les 24h. Pour les urgences, 
+                            mentionnez un admin dans le Discord.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">📝 FAQ</h5>
+                        <p class="card-text">
+                            Avant de nous contacter, consultez notre <a href="faq.html">FAQ</a>. 
+                            Votre question y trouve peut-être déjà une réponse !
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Raisons de contact -->
+        <h2 class="text-center mb-4">💡 Pourquoi nous contacter ?</h2>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6 class="mb-3">🎯 Support Technique</h6>
+                                <ul>
+                                    <li>Problèmes de connexion</li>
+                                    <li>Bugs ou erreurs</li>
+                                    <li>Questions sur les mods</li>
+                                    <li>Aide à l'installation</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 class="mb-3">🎮 Jeu & Communauté</h6>
+                                <ul>
+                                    <li>Questions sur le règlement</li>
+                                    <li>Signaler un joueur</li>
+                                    <li>Demander un starter pack</li>
+                                    <li>Suggestions d'amélioration</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert-success mt-5 text-center">
+            <h5 class="mb-3">🌟 Rejoignez la communauté Sol'Arkiens !</h5>
+            <p class="mb-0">
+                Plus de 200 joueurs actifs vous attendent sur Discord. 
+                Événements, discussions, entraide... La communauté parfaite pour les fans d'Ark !
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Sol'Arkiens. Tous droits réservés.</p>
+            <p class="small mt-2">Ark: Survival Evolved © Studio Wildcard</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/interaction.js"></script>
+</body>
+</html>

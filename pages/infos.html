@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infos - Mon Cluster Ark</title>
+    <title>Infos - Sol'Arkiens</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -11,8 +11,16 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html">🦖 Mon Cluster Ark</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand fw-bold" href="../index.html">🦖 Sol'Arkiens</a>
+            <!-- ID de la navbar collapsible -->
+            <!-- État initial : fermé -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -21,7 +29,9 @@
                     <li class="nav-item"><a class="nav-link active" href="infos.html">Infos</a></li>
                     <li class="nav-item"><a class="nav-link" href="serveurs.html">Serveurs</a></li>
                     <li class="nav-item"><a class="nav-link" href="reglement.html">Règlement</a></li>
+                    <li class="nav-item"><a class="nav-link" href="boutiques.html">Boutiques</a></li>
                     <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dons.html">Dons</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -164,11 +174,12 @@
     <!-- Footer -->
     <footer class="bg-dark text-white mt-5 py-4">
         <div class="container text-center">
-            <p class="mb-0">&copy; 2025 Mon Cluster Ark. Tous droits réservés.</p>
+            <p class="mb-0">&copy; 2025 Sol'Arkiens. Tous droits réservés.</p>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/interaction.js"></script>
 </body>
 </html>

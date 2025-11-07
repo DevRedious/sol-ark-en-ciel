@@ -151,7 +151,15 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="../index.html">🦖 Sol'Arkiens</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <!-- ID de la navbar collapsible -->
+            <!-- État initial : fermé -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -160,7 +168,10 @@
                     <li class="nav-item"><a class="nav-link" href="infos.html">Infos</a></li>
                     <li class="nav-item"><a class="nav-link" href="serveurs.html">Serveurs</a></li>
                     <li class="nav-item"><a class="nav-link" href="reglement.html">Règlement</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="boutique.html">Boutique</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="boutiques.html">Boutiques</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dons.html">Dons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -858,6 +869,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/interaction.js"></script>
     <script>
         function showShop(shopId) {
             // Hide all shops
