@@ -489,3 +489,126 @@ p {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* === STYLES POUR LES ICÔNES DES MODS === */
+.mods-grid {
+  margin: 0 auto;
+}
+
+.mod-card {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.mod-icon {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.mod-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0.5rem;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+  line-height: 1.2;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Effets de survol */
+.mod-card:hover .mod-icon {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 0, 128, 0.3);
+}
+
+.mod-card:hover .mod-title {
+  color: var(--text-primary);
+  text-shadow: 0 0 8px rgba(255, 0, 128, 0.3);
+}
+
+.mod-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive design pour les icônes */
+@media (max-width: 768px) {
+  .mod-title {
+    font-size: 0.7rem;
+    height: 2.2rem;
+    margin-top: 0.4rem;
+  }
+  
+  .mod-card {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .mod-title {
+    font-size: 0.65rem;
+    height: 2rem;
+    margin-top: 0.3rem;
+  }
+  
+  .mod-icon {
+    border-radius: 6px;
+  }
+}
+
+/* Animation d'apparition progressive */
+.mods-grid .row {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.mods-grid .row:nth-child(1) { animation-delay: 0.1s; }
+.mods-grid .row:nth-child(2) { animation-delay: 0.2s; }
+.mods-grid .row:nth-child(3) { animation-delay: 0.3s; }
+.mods-grid .row:nth-child(4) { animation-delay: 0.4s; }
+.mods-grid .row:nth-child(5) { animation-delay: 0.5s; }
+.mods-grid .row:nth-child(6) { animation-delay: 0.6s; }
+.mods-grid .row:nth-child(7) { animation-delay: 0.7s; }
+.mods-grid .row:nth-child(8) { animation-delay: 0.8s; }
+.mods-grid .row:nth-child(9) { animation-delay: 0.9s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Style pour le lien CurseForge (外部链接图标) */
+.mod-card::after {
+  content: "↗";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mod-card:hover::after {
+  opacity: 1;
+}
