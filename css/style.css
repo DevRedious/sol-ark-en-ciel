@@ -36,12 +36,16 @@ body {
 
 .navbar {
   background: var(--bg-secondary) !important;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   font-size: 1.5rem;
   letter-spacing: 0.5px;
   background: var(--gradient-rainbow);
@@ -51,6 +55,34 @@ body {
   background-clip: text;
   animation: rainbowShift 8s ease infinite;
   transition: var(--transition-smooth);
+  padding: 0.25rem 0;
+  text-decoration: none;
+}
+
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+  filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.5)) drop-shadow(0 0 20px rgba(255, 0, 128, 0.3));
+  transition: var(--transition-smooth);
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.navbar-brand:hover img {
+  filter: drop-shadow(0 0 15px rgba(0, 217, 255, 0.7)) drop-shadow(0 0 25px rgba(255, 0, 128, 0.5));
+  animation: logoPulse 2s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 .navbar-brand:hover {
@@ -335,6 +367,11 @@ footer a:hover {
   border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
+.sticky-card {
+  position: sticky;
+  top: 80px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-primary);
   font-weight: 600;
@@ -413,6 +450,10 @@ p {
 @media (max-width: 768px) {
   .navbar-brand {
     font-size: 1.25rem;
+  }
+
+  .navbar-brand img {
+    height: 32px;
   }
 
   .hero {

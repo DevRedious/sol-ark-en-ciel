@@ -62,7 +62,7 @@
             color: white;
         }
 
-        .dino-item {
+        .shop-item {
             background: white;
             border-radius: 10px;
             padding: 15px;
@@ -74,24 +74,24 @@
             transition: all 0.3s ease;
         }
 
-        .dino-item:hover {
+        .shop-item:hover {
             transform: translateX(5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .dino-item.tier1 {
+        .shop-item.tier1 {
             border-left-color: #FFD700;
         }
 
-        .dino-item.tier2 {
+        .shop-item.tier2 {
             border-left-color: #00D9FF;
         }
 
-        .dino-item.tier3 {
+        .shop-item.tier3 {
             border-left-color: #FF1493;
         }
 
-        .dino-name {
+        .item-name {
             font-weight: 600;
             flex-grow: 1;
         }
@@ -140,6 +140,39 @@
             border-image: linear-gradient(135deg, #FF1493, #00D9FF) 1;
         }
 
+        .mod-showcase {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .mod-showcase img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin: 10px;
+        }
+
+        .mod-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .mod-item {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .mod-item:hover {
+            transform: translateY(-5px);
+        }
+
         .hero-text {
             color: white;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -150,9 +183,10 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html">🦖 Sol'Arkiens</a>
-            <!-- ID de la navbar collapsible -->
-            <!-- État initial : fermé -->
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <img src="../images/logo.png" alt="Sol'Arkiens Logo" />
+                Sol'Arkiens
+            </a>
             <button class="navbar-toggler"
                     type="button"
                     data-bs-toggle="collapse"
@@ -178,685 +212,315 @@
     </nav>
 
     <!-- Header -->
-    <section class="hero bg-gradient text-center py-5">
+    <section class="hero bg-gradient text-white text-center py-4">
         <div class="container">
-            <h1 class="display-4 fw-bold hero-text mb-3">🛍️ Boutiques Sol'Arkiens</h1>
-            <p class="lead hero-text">Trouvez le dino de vos rêves !</p>
+            <h1 class="display-5 fw-bold">🛍️ Nos Boutiques</h1>
+            <p class="lead">Trois boutiques pour vous aider dans votre aventure</p>
         </div>
     </section>
 
     <!-- Contenu -->
     <main class="container my-5">
-        <!-- Shop Selector -->
-        <div class="row g-3 mb-5">
+        <div class="alert alert-info" role="alert">
+            <strong>💡 Important :</strong> Les prix sont fixes et non négociables. Toute duplication, triche ou exploitation de bug est strictement interdite.
+        </div>
+
+        <!-- Choix des boutiques -->
+        <div class="row mb-5">
             <div class="col-md-4">
                 <div class="shop-tab tab1 active" onclick="showShop('shop1')">
-                    <h3>💰 Boutique Dinos</h3>
-                    <p>Pièce d'Argent</p>
+                    <h3>💎 Boutique Dinos</h3>
+                    <p>Monnaie: Pièces d'argent</p>
+                    <small>Dinos, équipements et objets en jeu</small>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="shop-tab tab2" onclick="showShop('shop2')">
-                    <h3>💳 Boutique Discord</h3>
-                    <p>Pièce Discord</p>
+                    <h3>💬 Boutique Discord</h3>
+                    <p>Monnaie: Monnaie Discord</p>
+                    <small>Collectée quotidiennement dans money-money</small>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="shop-tab tab3" onclick="showShop('shop3')">
-                    <h3>⭐ Boutique Casino</h3>
-                    <p>Pièce d'Or</p>
+                    <h3>🎰 Boutique Casino</h3>
+                    <p>Monnaie: Pièces d'or</p>
+                    <small>Objets exclusifs et dinos rares</small>
                 </div>
             </div>
         </div>
 
-        <!-- SHOP 1: Boutique Dinos -->
+        <!-- Boutique 1 - Dinos (Pièces d'argent) -->
         <div id="shop1" class="shop-section active">
-            <div class="alert alert-warning border-2">
-                <strong>💰 Monnaie :</strong> Pièce d'Argent (Casino) - <strong>⚠️ Les prix ne sont pas négociables</strong>
+            <h2 class="mb-4">💎 Boutique Dinos - Pièces d'argent</h2>
+            
+            <div class="alert alert-warning">
+                <strong>💰 Comment obtenir des pièces d'argent :</strong><br>
+                Quêtes quotidiennes • Pack de semaine • Événements • Casino • Banque (200 polymères plaquette = 1 pièce)
             </div>
 
-            <div class="category-title">⚪️ Dinos collecte de ressources (180-185 pièces)</div>
+            <div class="category-title">🦕 Dinosaures</div>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Avhatina</span>
-                        <span class="price-badge">180 💰</span>
+                    <div class="shop-item tier1">
+                        <span class="item-name">Tricératops</span>
+                        <span class="price-badge">25 ⬜</span>
                     </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Ankylosaure</span>
-                        <span class="price-badge">180 💰</span>
+                    <div class="shop-item tier1">
+                        <span class="item-name">Parasaur</span>
+                        <span class="price-badge">30 ⬜</span>
                     </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Beelzebufo</span>
-                        <span class="price-badge">180 💰</span>
+                    <div class="shop-item tier1">
+                        <span class="item-name">Ankylosaurus</span>
+                        <span class="price-badge">40 ⬜</span>
                     </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Brontosaure</span>
-                        <span class="price-badge">180 💰</span>
+                    <div class="shop-item tier1">
+                        <span class="item-name">Iguanodon</span>
+                        <span class="price-badge">35 ⬜</span>
                     </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Ringoroide</span>
-                        <span class="price-badge">180 💰</span>
+                    <div class="shop-item tier2">
+                        <span class="item-name">Stegosaurus</span>
+                        <span class="price-badge">50 ⬜</span>
                     </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Dowedicourus</span>
-                        <span class="price-badge">180 💰</span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Bousier</span>
-                        <span class="price-badge">180 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Reine des abeilles</span>
-                        <span class="price-badge">185 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Karkinos</span>
-                        <span class="price-badge">185 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Mégaloceros</span>
-                        <span class="price-badge">185 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Mochops</span>
-                        <span class="price-badge">185 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Oviraptor</span>
-                        <span class="price-badge">185 💰</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category-title">🐾 Dinos de compagnie d'épaule (100-120 pièces)</div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Achéopteryx</span>
-                        <span class="price-badge">120 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Cat</span>
-                        <span class="price-badge">120 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Compy</span>
-                        <span class="price-badge">120 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Dimorphodon</span>
-                        <span class="price-badge">120 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Plumineux</span>
-                        <span class="price-badge">100 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Gerboise</span>
-                        <span class="price-badge">100 💰</span>
+                    <div class="shop-item tier2">
+                        <span class="item-name">Pachycéphalosaurus</span>
+                        <span class="price-badge">45 ⬜</span>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Mésopithèque</span>
-                        <span class="price-badge">100 💰</span>
+                    <div class="shop-item tier2">
+                        <span class="item-name">Carnotaurus</span>
+                        <span class="price-badge">60 ⬜</span>
                     </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Microrap</span>
-                        <span class="price-badge">100 💰</span>
+                    <div class="shop-item tier2">
+                        <span class="item-name">Allosaurus</span>
+                        <span class="price-badge">75 ⬜</span>
                     </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Loutre</span>
-                        <span class="price-badge">100 💰</span>
+                    <div class="shop-item tier2">
+                        <span class="item-name">Spinosaurus</span>
+                        <span class="price-badge">80 ⬜</span>
                     </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Pegomastax</span>
-                        <span class="price-badge">100 💰</span>
+                    <div class="shop-item tier3">
+                        <span class="item-name">Tyrannosaurus Rex</span>
+                        <span class="price-badge">100 ⬜</span>
                     </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Lumicorne</span>
-                        <span class="price-badge">100 💰</span>
+                    <div class="shop-item tier3">
+                        <span class="item-name">Quetzalcoatlus</span>
+                        <span class="price-badge">90 ⬜</span>
                     </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Vautour</span>
-                        <span class="price-badge">100 💰</span>
+                    <div class="shop-item tier3">
+                        <span class="item-name">Giganotosaurus</span>
+                        <span class="price-badge">120 ⬜</span>
                     </div>
                 </div>
             </div>
 
-            <div class="category-title">🛡️ Dinos volants (200-245 pièces)</div>
+            <div class="category-title">🏗️ Structures</div>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Argentavis</span>
-                        <span class="price-badge">200 💰</span>
+                    <div class="shop-item tier1">
+                        <span class="item-name">Outils de base</span>
+                        <span class="price-badge">20 ⬜</span>
                     </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Griffon</span>
-                        <span class="price-badge">245 💰</span>
+                    <div class="shop-item tier1">
+                        <span class="item-name">Matériaux de construction</span>
+                        <span class="price-badge">15 ⬜</span>
                     </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Harfang des neiges</span>
-                        <span class="price-badge">245 💰</span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Onyc</span>
-                        <span class="price-badge">200 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Ptéranodon</span>
-                        <span class="price-badge">200 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Tapejara</span>
-                        <span class="price-badge">200 💰</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category-title">🦁 Dinos carnivores (350-700 pièces)</div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Allosaurus</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Carnotaurus</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Ceratosaurus</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Daeodon</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Deinonychus</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Dilophosaur</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Dimetrodon</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Direwolf</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Hyaenodon</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Kaprosuchus</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Managarmr</span>
-                        <span class="price-badge">500 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Mégalania</span>
-                        <span class="price-badge">350 💰</span>
+                    <div class="shop-item tier2">
+                        <span class="item-name">Électronique</span>
+                        <span class="price-badge">35 ⬜</span>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Mégalosaurus</span>
-                        <span class="price-badge">350 💰</span>
+                    <div class="shop-item tier2">
+                        <span class="item-name">Chimie</span>
+                        <span class="price-badge">40 ⬜</span>
                     </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Nameless</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Pulmonoscorpius</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Purlovia</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Raptor</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Ravager</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Rex</span>
-                        <span class="price-badge">600 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Sabertooth</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Sarco</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Spinosaurus</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Moro raptor/Rex</span>
-                        <span class="price-badge">700 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Ours Sinistre</span>
-                        <span class="price-badge">350 💰</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category-title">🌿 Dinos herbivores (150-180 pièces)</div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Carbonemys</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Chalicotherium</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Diplodocus</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Dodo</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Equus</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Gallimimus</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Gasbags</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Bison</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Gigantopithecus</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Iguanodon</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Kentrosaurus</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Lystrosaurus</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Mammoth</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Morellatops</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Pachy</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Paracetherium</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Parasaure</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Procoptodon</span>
-                        <span class="price-badge">150 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Gigantoraptor</span>
-                        <span class="price-badge">180 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Maewing</span>
-                        <span class="price-badge">180 💰</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category-title">🌊 Dinos aquatiques (250-275 pièces)</div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Archelon</span>
-                        <span class="price-badge">250 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Baryonyx</span>
-                        <span class="price-badge">250 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Basilosaurus</span>
-                        <span class="price-badge">250 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Diplocaulus</span>
-                        <span class="price-badge">250 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Dunkleosteus</span>
-                        <span class="price-badge">250 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Helicoprion</span>
-                        <span class="price-badge">250 💰</span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Ichthyosaurus</span>
-                        <span class="price-badge">250 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Manta</span>
-                        <span class="price-badge">250 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Mégalodon</span>
-                        <span class="price-badge">250 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Mosasaurus</span>
-                        <span class="price-badge">275 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Tusoteuthis</span>
-                        <span class="price-badge">275 💰</span>
-                    </div>
-                    <div class="dino-item tier1">
-                        <span class="dino-name">Xiphactinus</span>
-                        <span class="price-badge">250 💰</span>
+                    <div class="shop-item tier3">
+                        <span class="item-name">Tek</span>
+                        <span class="price-badge">80 ⬜</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SHOP 2: Boutique Discord -->
+        <!-- Boutique 2 - Discord -->
         <div id="shop2" class="shop-section">
-            <div class="alert alert-info border-2">
-                <strong>💳 Monnaie :</strong> Pièce Discord - Récoltées quotidiennement
+            <h2 class="mb-4">💬 Boutique Discord - Monnaie Discord</h2>
+            
+            <div class="alert alert-info">
+                <strong>💎 Obtenir de la monnaie Discord :</strong><br>
+                Collectée quotidiennement dans le salon <code>money-money</code>. Participation active = plus de monnaie !
             </div>
 
-            <div class="category-title">🐉 Dinos normaux</div>
+            <div class="category-title">🎁 Contenus Spéciaux</div>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Wyverne Feu</span>
-                        <span class="price-badge">2500 💳</span>
+                    <div class="shop-item tier2">
+                        <span class="item-name">Packs de démarrage</span>
+                        <span class="price-badge">150 💬</span>
                     </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Wyverne Foudre</span>
-                        <span class="price-badge">2500 💳</span>
+                    <div class="shop-item tier2">
+                        <span class="item-name">Kits de construction</span>
+                        <span class="price-badge">100 💬</span>
                     </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Wyverne Poison</span>
-                        <span class="price-badge">2500 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Wyverne Glace</span>
-                        <span class="price-badge">2500 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Giganotosaure</span>
-                        <span class="price-badge">4000 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Quetzal</span>
-                        <span class="price-badge">1500 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Deinosuchus</span>
-                        <span class="price-badge">2000 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Phoenix</span>
-                        <span class="price-badge">5000 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Golem</span>
-                        <span class="price-badge">1500 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Fasolasuchus</span>
-                        <span class="price-badge">1500 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Carcharodontosaurus</span>
-                        <span class="price-badge">3000 💳</span>
+                    <div class="shop-item tier1">
+                        <span class="item-name">Nourriture pour dinos</span>
+                        <span class="price-badge">50 💬</span>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Wak Spino</span>
-                        <span class="price-badge">3000 💳</span>
+                    <div class="shop-item tier2">
+                        <span class="item-name">Ressources rares</span>
+                        <span class="price-badge">80 💬</span>
                     </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Megaraptor</span>
-                        <span class="price-badge">3000 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Reaper</span>
-                        <span class="price-badge">3000 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Rock Drake</span>
-                        <span class="price-badge">2000 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Rhyniognatha</span>
-                        <span class="price-badge">2000 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Desolatitan</span>
-                        <span class="price-badge">2500 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Meraxes</span>
-                        <span class="price-badge">2500 💳</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category-title">✨ Wyvernes Runic</div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Wyverne de Feu</span>
-                        <span class="price-badge">1500 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Wyverne Poison</span>
-                        <span class="price-badge">1500 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Wyverne Spark</span>
-                        <span class="price-badge">1500 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Wyverne de Glace</span>
-                        <span class="price-badge">1500 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Wyverne Ghost</span>
-                        <span class="price-badge">4500 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Wyverne de Quartz</span>
-                        <span class="price-badge">1500 💳</span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Wyverne Rubis</span>
-                        <span class="price-badge">2500 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Wyverne D'émeraude</span>
-                        <span class="price-badge">2500 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Wyverne Saphir</span>
-                        <span class="price-badge">2500 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Wyverne Halo</span>
-                        <span class="price-badge">2500 💳</span>
-                    </div>
-                    <div class="dino-item tier2">
-                        <span class="dino-name">Wyverne Lanterne Halo</span>
-                        <span class="price-badge">1500 💳</span>
+                    <div class="shop-item tier3">
+                        <span class="item-name">Objets exclusifs</span>
+                        <span class="price-badge">200 💬</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SHOP 3: Boutique Casino -->
+        <!-- Boutique 3 - Casino (Pièces d'or) -->
         <div id="shop3" class="shop-section">
-            <div class="alert alert-danger border-2">
-                <strong>⭐ Monnaie :</strong> Gold Arkuna Coin - Récoltées au Casino, missions quotidiennes et événements
+            <h2 class="mb-4">🎰 Boutique Casino - Pièces d'or</h2>
+            
+            <div class="alert alert-warning">
+                <strong>💰 Obtenir des pièces d'or :</strong><br>
+                Gagnez au casino ! Prédisez correctement pour obtenir des pièces d'or et tenter votre chance.
             </div>
 
-            <div class="category-title">🤖 Dinos Tek</div>
+            <div class="category-title">🌟 Dinosaures Shiny</div>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Parasaure Tek</span>
-                        <span class="price-badge">350 ⭐</span>
+                    <div class="shop-item tier3">
+                        <span class="item-name">Triceratops Shiny</span>
+                        <span class="price-badge">200 🏆</span>
                     </div>
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Quetzal Tek</span>
-                        <span class="price-badge">400 ⭐</span>
+                    <div class="shop-item tier3">
+                        <span class="item-name">Parasaur Shiny</span>
+                        <span class="price-badge">180 🏆</span>
                     </div>
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Raptor Tek</span>
-                        <span class="price-badge">350 ⭐</span>
-                    </div>
-                    <div class="dino-item tier3">
-                        <span class="dino-name">T-Rex Tek</span>
-                        <span class="price-badge">550 ⭐</span>
+                    <div class="shop-item tier3">
+                        <span class="item-name">Stegosaurus Shiny</span>
+                        <span class="price-badge">250 🏆</span>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Giganotosaurus Tek</span>
-                        <span class="price-badge">750 ⭐</span>
+                    <div class="shop-item tier3">
+                        <span class="item-name">Rex Shiny</span>
+                        <span class="price-badge">500 🏆</span>
                     </div>
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Stegosaurus Tek</span>
-                        <span class="price-badge">350 ⭐</span>
-                    </div>
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Triceratops Tek</span>
-                        <span class="price-badge">350 ⭐</span>
+                    <div class="shop-item tier3">
+                        <span class="item-name">Quetzal Shiny</span>
+                        <span class="price-badge">400 🏆</span>
                     </div>
                 </div>
             </div>
 
-            <div class="category-title">🏇 Selles Mythique de Dinos</div>
+            <div class="category-title">💎 Objets Rares</div>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Selle de T-Rex</span>
-                        <span class="price-badge">550 ⭐</span>
+                    <div class="shop-item tier3">
+                        <span class="item-name">Tek Saddles</span>
+                        <span class="price-badge">300 🏆</span>
                     </div>
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Selle de Giganotosaurus</span>
-                        <span class="price-badge">750 ⭐</span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Selle de Carcharodontosaurus</span>
-                        <span class="price-badge">750 ⭐</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category-title">⚔️ Schémas Mythique</div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Armure en Métal</span>
-                        <span class="price-badge">550 ⭐</span>
-                    </div>
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Armure du Désert</span>
-                        <span class="price-badge">550 ⭐</span>
-                    </div>
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Armure en Fourrure</span>
-                        <span class="price-badge">550 ⭐</span>
-                    </div>
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Hache</span>
-                        <span class="price-badge">550 ⭐</span>
-                    </div>
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Pioche</span>
-                        <span class="price-badge">550 ⭐</span>
+                    <div class="shop-item tier3">
+                        <span class="item-name">Éléments de TEK</span>
+                        <span class="price-badge">150 🏆</span>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Faucille</span>
-                        <span class="price-badge">550 ⭐</span>
+                    <div class="shop-item tier3">
+                        <span class="item-name">Cryopodis</span>
+                        <span class="price-badge">50 🏆</span>
                     </div>
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Lance</span>
-                        <span class="price-badge">550 ⭐</span>
-                    </div>
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Épée</span>
-                        <span class="price-badge">550 ⭐</span>
-                    </div>
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Bouclier</span>
-                        <span class="price-badge">550 ⭐</span>
-                    </div>
-                    <div class="dino-item tier3">
-                        <span class="dino-name">Fusil à canon long</span>
-                        <span class="price-badge">550 ⭐</span>
+                    <div class="shop-item tier3">
+                        <span class="item-name">Giga Egg</span>
+                        <span class="price-badge">400 🏆</span>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Section Mods Populaires -->
+        <section class="mt-5">
+            <h2 class="mb-4 text-center">🎮 Mods Populaires sur Sol'Ark</h2>
+            
+            <div class="text-center mb-4">
+                <p>Découvrez les mods les plus appréciés de notre communauté</p>
+            </div>
+
+            <div class="mod-showcase">
+                <img src="../images/image_1.png" alt="Mods populaires" class="img-fluid rounded shadow" style="max-height: 300px;">
+                <img src="../images/image_2.png" alt="Mods de gameplay" class="img-fluid rounded shadow" style="max-height: 300px;">
+            </div>
+
+            <div class="mod-grid">
+                <div class="mod-item">
+                    <h5>🎵 Mods de Musique</h5>
+                    <p>• PFF Music Collection<br>• Rhythmbox<br>• Train Music</p>
+                </div>
+                <div class="mod-item">
+                    <h5>🏗️ Outils de Construction</h5>
+                    <p>• Structure Management Tools<br>• Klinger Additional Structures<br>• RR-Homedeco</p>
+                </div>
+                <div class="mod-item">
+                    <h5>🦕 Dinosaures</h5>
+                    <p>• Shiny! Dinos Ascended<br>• Runic Wyvers<br>• BigALs WAK Spinosaurus</p>
+                </div>
+                <div class="mod-item">
+                    <h5>💰 Casino & Économie</h5>
+                    <p>• LudopARK CASINO Freemium<br>• Custom Dino Levels<br>• Stacking Mod</p>
+                </div>
+                <div class="mod-item">
+                    <h5>🔧 Outils</h5>
+                    <p>• Awesome ARK Tools<br>• Super Cryo Storage<br>• Auto Engrams</p>
+                </div>
+                <div class="mod-item">
+                    <h5>🌍 Maps & Envir.</h5>
+                    <p>• Amissa Additions<br>• Alfa Oceanic Platforms<br>• Landscaping</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <img src="../images/image_3.png" alt="Plus de mods" class="img-fluid rounded shadow" style="max-height: 400px;">
+            </div>
+        </section>
+
+        <!-- Section Enchères -->
+        <section class="mt-5">
+            <h2 class="mb-4 text-center">🎯 Enchères Sol'Ark</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">📅 Horaires</h5>
+                            <p class="card-text">
+                                <strong>Samedi à 21h00</strong><br>
+                                Tous les 15 jours<br>
+                                Participation vocale et textuelle
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">🎁 Articles</h5>
+                            <p class="card-text">
+                                • Dinos Shiny<br>
+                                • Chibis Dinos<br>
+                                • Objets rares<br>
+                                • Dinos spéciaux admin
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->

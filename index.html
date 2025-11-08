@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sol'Arkiens</title>
+    <title>Sol'Arkiens - Cluster ARK</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -11,7 +11,10 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">🦖 Sol'Arkiens</a>
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="images/logo.png" alt="Sol'Arkiens Logo" />
+                Sol'Arkiens
+            </a>
             <!-- ID de la navbar collapsible -->
             <!-- État initial : fermé -->
             <button class="navbar-toggler"
@@ -25,7 +28,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link" href="pages/infos.html">Infos</a></li>
                     <li class="nav-item"><a class="nav-link" href="pages/serveurs.html">Serveurs</a></li>
                     <li class="nav-item"><a class="nav-link" href="pages/reglement.html">Règlement</a></li>
@@ -41,55 +44,282 @@
     <!-- Hero Section -->
     <section class="hero bg-gradient text-white text-center py-5">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-3">Bienvenue sur notre Cluster Ark</h1>
-            <p class="lead mb-4">Des serveurs de qualité pour une expérience de jeu inoubliable</p>
-            <a href="pages/infos.html" class="btn btn-primary btn-lg">Commencer</a>
+            <img src="images/logo.png" alt="Sol'Ark Logo" class="navbar-logo mb-4" style="max-width: 200px;">
+            <h1 class="display-4 fw-bold mb-3">🦖 Bienvenue sur Sol'Ark</h1>
+            <p class="lead mb-4">Le cluster ARK français PvE avec économie structurée et communauté bienveillante</p>
+            <div class="row justify-content-center g-3">
+                <div class="col-auto">
+                    <a href="pages/infos.html" class="btn btn-primary btn-lg">📊 Découvrir</a>
+                </div>
+                <div class="col-auto">
+                    <a href="pages/serveurs.html" class="btn btn-outline-light btn-lg">🌍 Nos Maps</a>
+                </div>
+                <div class="col-auto">
+                    <a href="pages/reglement.html" class="btn btn-outline-light btn-lg">📜 Règles</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contenu Principal -->
     <main class="container my-5">
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">🎮 Serveurs</h5>
-                        <p class="card-text">Découvrez tous nos serveurs et leurs caractéristiques.</p>
-                        <a href="pages/serveurs.html" class="btn btn-sm btn-outline-primary">En savoir plus</a>
+        <!-- Stats Rapides -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-3">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h1 class="text-primary">7</h1>
+                        <h5>Maps Disponibles</h5>
+                        <small class="text-muted">Island, Scorched, Amissa, Ragnarok, Valguero, Astraeos, Aberration</small>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">📋 Règlement</h5>
-                        <p class="card-text">Lisez attentivement notre règlement avant de jouer.</p>
-                        <a href="pages/reglement.html" class="btn btn-sm btn-outline-primary">Consulter</a>
+            <div class="col-md-3">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h1 class="text-success">3</h1>
+                        <h5>Boutiques</h5>
+                        <small class="text-muted">Argent, Discord, Or avec économie équilibrée</small>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">❓ FAQ</h5>
-                        <p class="card-text">Trouvez les réponses à vos questions fréquentes.</p>
-                        <a href="pages/faq.html" class="btn btn-sm btn-outline-primary">Consulter</a>
+            <div class="col-md-3">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h1 class="text-warning">15j</h1>
+                        <h5>Enchères</h5>
+                        <small class="text-muted">Tous les samedis à 21h00 avec dinos rares</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <h1 class="text-info">2x</h1>
+                        <h5>Multiplicateurs</h5>
+                        <small class="text-muted">XP, Récolte, Taming optimisés</small>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Section Maps -->
+        <section class="mb-5">
+            <h2 class="mb-4 text-center">🗺️ Nos 7 Maps</h2>
+            <div class="text-center mb-4">
+                <img src="images/image.png" alt="Liste des serveurs Sol'Ark" class="img-fluid rounded shadow" style="max-height: 400px;">
+            </div>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">🏝️ The Island</h5>
+                            <p class="card-text small">La map classique pour débuter votre aventure</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">🏜️ Scorched Earth</h5>
+                            <p class="card-text small">Survie en milieu désertique</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">🌸 Amissa</h5>
+                            <p class="card-text small">Map custom unique avec contenu spécial</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">🏔️ Ragnarok</h5>
+                            <p class="card-text small">Map étendue avec déserts et montagnes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">❄️ Valguero</h5>
+                            <p class="card-text small">Environnements froids et diversifiés</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">🌌 Astraeos & ☢️ Aberration</h5>
+                            <p class="card-text small">Maps spéciales spatiale et radioactive</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Économie -->
+        <section class="mb-5">
+            <h2 class="mb-4 text-center">💰 Système Économique</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-warning h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-warning">💎 Boutique Dinos</h5>
+                            <h1 class="text-warning">⬜</h1>
+                            <p class="card-text">Pièces d'argent</p>
+                            <small>Dinos, équipements et objets en jeu</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-info h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-info">💬 Boutique Discord</h5>
+                            <h1 class="text-info">💬</h1>
+                            <p class="card-text">Monnaie Discord</p>
+                            <small>Collectée quotidiennement dans money-money</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-danger h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-danger">🎰 Boutique Casino</h5>
+                            <h1 class="text-danger">🏆</h1>
+                            <p class="card-text">Pièces d'or</p>
+                            <small>Objets exclusifs et dinos rares</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Mods -->
+        <section class="mb-5">
+            <h2 class="mb-4 text-center">🎮 Mods Populaires</h2>
+            <div class="text-center mb-4">
+                <img src="images/image_1.png" alt="Mods populaires" class="img-fluid rounded shadow me-2" style="max-height: 300px;">
+                <img src="images/image_2.png" alt="Mods gameplay" class="img-fluid rounded shadow ms-2" style="max-height: 300px;">
+            </div>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h6>🎵 Musique</h6>
+                            <small>PFF Collection, Rhythmbox, Train Music</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h6>🏗️ Construction</h6>
+                            <small>Structure Tools, RR-Homedeco, Wall Decor</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h6>🦕 Dinos</h6>
+                            <small>Shiny Dinos, Runic Wyverns, Spinosaurus</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h6>💰 Casino</h6>
+                            <small>LudopARK CASINO, Poker Table, Stacking Mod</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation rapide -->
+        <section class="mb-5">
+            <h2 class="mb-4 text-center">📋 Navigation Rapide</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">🌍 Serveurs</h5>
+                            <p class="card-text">7 maps avec multiplicateurs 2x</p>
+                            <a href="pages/serveurs.html" class="btn btn-sm btn-outline-primary">Voir les serveurs</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">📜 Règlement</h5>
+                            <p class="card-text">Charte Discord et ARK détaillées</p>
+                            <a href="pages/reglement.html" class="btn btn-sm btn-outline-primary">Consulter</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">🛍️ Boutiques</h5>
+                            <p class="card-text">3 économie parallèles</p>
+                            <a href="pages/boutiques.html" class="btn btn-sm btn-outline-primary">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">❓ FAQ</h5>
+                            <p class="card-text">Réponses aux questions fréquentes</p>
+                            <a href="pages/faq.html" class="btn btn-sm btn-outline-primary">FAQ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- À propos -->
         <section class="mt-5 pt-5 border-top">
-            <h2 class="mb-4">À propos</h2>
-            <p class="mb-3">
-                Notre cluster Ark offre une expérience de jeu complète avec des serveurs stables, modérés et en constant développement. 
-                Que vous soyez nouveau joueur ou vétéran, vous trouverez une communauté accueillante et des serveurs adaptés à votre playstyle.
-            </p>
-            <p>
-                Rejoignez-nous dès maintenant et commencez votre aventure dans le monde d'Ark !
-            </p>
+            <div class="row g-4">
+                <div class="col-md-8">
+                    <h2 class="mb-4">À propos de Sol'Ark</h2>
+                    <p class="mb-3">
+                        Sol'Ark est un cluster ARK français dédié au jeu collaboratif en environnement PvE. 
+                        Notre communauté bienveillante et active vous garantit une expérience de jeu enrichissante 
+                        avec des serveurs stables, une économie équilibrée et des événements réguliers.
+                    </p>
+                    <p class="mb-3">
+                        Avec 7 maps uniques, un système d'enchères bi-hebdomadaire, et plus de 30 mods vérifiés, 
+                        nous offrons une profondeur de gameplay tout en conservant l'authenticité de l'expérience ARK.
+                    </p>
+                    <p>
+                        <strong>Rejoignez les Sol'Arkiens dès maintenant et commencez votre aventure !</strong>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">📊 Caractéristiques</h5>
+                            <ul class="list-unstyled small">
+                                <li>✅ 7 maps disponibles</li>
+                                <li>✅ Multiplicateurs 2x optimisés</li>
+                                <li>✅ Communauté française active</li>
+                                <li>✅ 3 économie parallèles</li>
+                                <li>✅ Enchères tous les 15 jours</li>
+                                <li>✅ Mods vérifiés et stables</li>
+                                <li>✅ Staff réactif et bienveillant</li>
+                                <li>✅ Sauvegardes horaires</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -97,7 +327,7 @@
     <footer class="bg-dark text-white mt-5 py-4">
         <div class="container text-center">
             <p class="mb-0">&copy; 2025 Sol'Arkiens. Tous droits réservés.</p>
-            <p class="small mt-2">Site crée par <a href="https://discord.gg/6b4NYRNsRC">Dev Redious</a></p>
+            <p class="small mt-2">Ark: Survival Evolved © Studio Wildcard - Site créé avec ❤️ pour la communauté</p>
         </div>
     </footer>
 
